@@ -11,7 +11,7 @@ import UIKit
 class SettingController{
     
     //MARK: - Properties
-    var settings: [Setting] = {
+    static let settings: [Setting] = {
         let music = Setting(name: "Music", icon: #imageLiteral(resourceName: "iTunes"), isOn: false)
         let appStore = Setting(name: "App Store", icon: #imageLiteral(resourceName: "appStore"), isOn: false)
         let iBooks = Setting(name: "iBooks", icon: #imageLiteral(resourceName: "iBooks"), isOn: true)

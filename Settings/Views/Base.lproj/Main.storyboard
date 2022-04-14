@@ -42,6 +42,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-Gb-KCK">
                                                     <rect key="frame" x="297" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="settingSwitchToggled:" destination="aOE-2P-gO7" eventType="valueChanged" id="HaZ-65-a1k"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </stackView>
@@ -54,6 +57,11 @@
                                         <constraint firstItem="6ES-fM-CFu" firstAttribute="centerY" secondItem="Fjd-hy-hBw" secondAttribute="centerY" id="t38-AQ-T34"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="settingImageView" destination="Jci-zK-3eM" id="Tyg-Vw-7n1"/>
+                                    <outlet property="settingNameLabel" destination="9Sp-r7-nZT" id="tSB-CS-ALf"/>
+                                    <outlet property="settingSwitch" destination="iRK-Gb-KCK" id="5vb-yz-sNY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
