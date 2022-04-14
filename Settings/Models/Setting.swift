@@ -8,6 +8,14 @@
 
 import UIKit
 
+/**
+Creates our Setting Object - 'Model'
+    - Properties:
+        - name: the 'String' identifer for the Setting
+        - icon: the 'UIImage' that matches the Setting
+        - isOn: the 'Bool' the designate whether the setting is on or not
+*/
+
 class Setting {
     //MARK: - Properties
     let name: String
