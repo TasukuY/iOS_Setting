@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol SettingCellDelegate: class {
+    //Step one: Declare Protocol
+    func settingSwitchToggled(for cell: SettingTableViewCell)
+}
+
 class SettingTableViewCell: UITableViewCell {
 
     //MARK: - IBOutlets
     @IBOutlet weak var settingImageView: UIImageView!
     @IBOutlet weak var settingSwitch: UISwitch!
     @IBOutlet weak var settingNameLabel: UILabel!
+    
+    //MARK: - Properties
+    //step two: create the delegate
+    weak var settingCellDelegate: SettingCellDelegate?
     
     //MARK: - Methods
     func updateViews(with setting: Setting){
@@ -26,6 +35,7 @@ class SettingTableViewCell: UITableViewCell {
     
     //MARK: - IBActions
     @IBAction func settingSwitchToggled(_ sender: Any) {
+        settingCellDelegate?.settingSwitchToggled(for: self)
     }
     
 }

@@ -25,8 +25,18 @@ class SettingTableViewController: UITableViewController {
         //as? -> optional typecasting to the specific type in this case it is the settingCell other wise return UITableViewCell(), () means initilizing it
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as? SettingTableViewCell else { return UITableViewCell()}
         let setting = SettingController.settings[indexPath.row]
+        cell.settingCellDelegate = self
         cell.updateViews(with: setting)
         return cell
     }
      
 }//End of class
+
+extension SettingTableViewController: SettingCellDelegate{
+    func settingSwitchToggled(for cell: SettingTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let setting = SettingController.settings[indexPath.row]
+        SettingController.toggleIsOn(for: setting)
+        cell.updateViews(with: setting)
+    }
+}
